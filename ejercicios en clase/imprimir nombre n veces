@@ -1,0 +1,156 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPqaX8ZoknR3b0oxI70hTye",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/baltazardayana13/Python/blob/main/ejercicios%20en%20clase/imprimir%20nombre%20n%20veces\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 38,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1RiUYf5aeBop",
+        "outputId": "2e25b6e3-1622-4433-b93b-96c7ecd9a083"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "introduzca su nombre: dayana baltazar\n"
+          ]
+        }
+      ],
+      "source": [
+        "nombre=input('introduzca su nombre: ').title()\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(nombre)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i7ZhtmXPe2p0",
+        "outputId": "dcd61119-a846-4112-be60-f71289f168a5"
+      },
+      "execution_count": 39,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dayana Baltazar\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num=int(round(input('Cuantas veces desea multiplicar su nombre: ')))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Vqdk3aJ1fhFk",
+        "outputId": "a5bda699-c3b3-4a99-d3ac-4b921ff741b4"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Cuantas veces desea multiplicar su nombre: 5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print((nombre+ '\\n')*num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dSkZC5akf0XV",
+        "outputId": "45eed071-5aa3-441b-e60c-72b9bced4014"
+      },
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "enter='\\n'\n",
+        "print(f'tu nombre es '+(nombre+enter)*num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9l50D_7ugbtl",
+        "outputId": "1c46f19c-2058-4a34-dafb-478d491a996e"
+      },
+      "execution_count": 48,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "tu nombre es Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "Dayana Baltazar\n",
+            "\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
