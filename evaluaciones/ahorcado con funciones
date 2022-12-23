@@ -1,0 +1,111 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO9WX5V3epfJoU7QlTGIUr0",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/baltazardayana13/Python/blob/main/evaluaciones/ahorcado%20con%20funciones\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "UlUun1e04sIA"
+      },
+      "outputs": [],
+      "source": [
+        "\"\"\"\n",
+        "Proyecto Básico de Python (El Ahorcado).\n",
+        "Basado en el proyecto de: Kylie Ying (@kylieyying). \n",
+        "\"\"\"\n",
+        "import random\n",
+        "import string\n",
+        "from palabras import palabras\n",
+        "from ahorcado_diagramas import vidas_diccionario_visual\n",
+        "\n",
+        "\n",
+        "def obtener_palabra_válida(palabras):\n",
+        "    palabra = random.choice(palabras) \n",
+        "\n",
+        "\n",
+        "    while '-' in palabra or ' ' in palabra:\n",
+        "        palabra = random.choice(palabras)\n",
+        "\n",
+        "    return palabra.upper()\n",
+        "\n",
+        "\n",
+        "def ahorcado():\n",
+        "\n",
+        "    print(\"=======================================\")\n",
+        "    print(\" ¡Bienvenido(a) al juego del Ahorcado! \")\n",
+        "    print(\"=======================================\")\n",
+        "\n",
+        "    palabra = obtener_palabra_válida(palabras)\n",
+        "    letras_por_adivinar = set(palabra)  \n",
+        "    abecedario = set(string.ascii_uppercase) \n",
+        "    letras_adivinadas = set()  \n",
+        "\n",
+        "    vidas = 7\n",
+        "\n",
+        "\n",
+        "    while len(letras_por_adivinar) > 0 and vidas > 0:\n",
+        "\n",
+        "        print(f\"Te quedan {vidas} vidas y has usado estas letras: {' '.join(letras_adivinadas)}\")\n",
+        "\n",
+        "      \n",
+        "        palabra_lista = [letra if letra in letras_adivinadas else '-' for letra in palabra]\n",
+        "        print(vidas_diccionario_visual[vidas]) \n",
+        "        print(f\"Palabra: {' '.join(palabra_lista)}\") \n",
+        "\n",
+        "     \n",
+        "        letra_usuario = input('Escoge una letra: ').upper()\n",
+        "\n",
+        "        if letra_usuario in abecedario - letras_adivinadas:\n",
+        "            letras_adivinadas.add(letra_usuario)\n",
+        "       \n",
+        "            if letra_usuario in letras_por_adivinar:\n",
+        "                letras_por_adivinar.remove(letra_usuario)\n",
+        "                print('')\n",
+        "         \n",
+        "            else:\n",
+        "                vidas = vidas - 1\n",
+        "                print(f\"\\nTu letra, {letra_usuario} no está en la palabra.\")\n",
+        "        \n",
+        "        elif letra_usuario in letras_adivinadas:\n",
+        "            print(\"\\nYa escogiste esa letra. Por favor escoge una letra nueva.\")\n",
+        "        else:\n",
+        "            print(\"\\nEsta letra no es válida.\")\n",
+        "\n",
+        "   \n",
+        "    if vidas == 0:\n",
+        "        print(vidas_diccionario_visual[vidas])\n",
+        "        print(f\"¡Ahorcado! Perdiste. Lo lamento mucho. La palabra era: {palabra}\")\n",
+        "    else:\n",
+        "        print(f'¡Excelente! ¡Adivinaste la palabra {palabra}!')\n",
+        "\n",
+        "\n",
+        "    ahorcado()"
+      ]
+    }
+  ]
+}
